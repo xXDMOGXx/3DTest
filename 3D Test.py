@@ -298,7 +298,7 @@ def main():
     sphere = Object(Vector3D(-2.0, 2.0, 4.0), Vector3D(0.5, 0.2, 0.7), None, (54, 186, 39), load_obj_file('sphere.obj'))
     ring = Object(Vector3D(-2.0, 0.0, 4.0), Vector3D(0.5, 0.2, 0.7), None, (54, 186, 39), load_obj_file('ring.obj'))
 
-    object_list = [sphere]
+    object_list = [sphere, cube2]
 
     for current_object in object_list:
         draw_mesh(window, current_object)
