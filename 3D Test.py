@@ -43,6 +43,7 @@ class Object:
         self.mesh = mesh
 
 
+# Manually defined vertices for some primitives
 class Shapes:
     cube = Mesh([
         Triangle([Vector3D(0.0, 0.0, 0.0),   Vector3D(0.0, 1.0, 0.0),   Vector3D(1.0, 1.0, 0.0)]),
@@ -292,12 +293,14 @@ def main():
     window.configure(background='#a1a1a1')
     window.pack()
 
+    #                         Location                 Rotation     Scale      Color         Mesh
     cube1 = Object(Vector3D(1.0, 0.0, 6.0), Vector3D(0.2, 0.4, 0.6), None, (87, 151, 255), Shapes.cube)
     cube2 = Object(Vector3D(-1.0, 0.0, 3.0), Vector3D(0.4, 0.2, 0.6), None, (230, 18, 18), Shapes.cube)
     pyramid = Object(Vector3D(-5.0, 0.0, 6.0), Vector3D(1.0, 0.5, 0.5), None, (230, 18, 18), Shapes.rectangular_pyramid)
     sphere = Object(Vector3D(-2.0, 2.0, 4.0), Vector3D(0.5, 0.2, 0.7), None, (54, 186, 39), load_obj_file('sphere.obj'))
     ring = Object(Vector3D(-2.0, 0.0, 4.0), Vector3D(0.5, 0.2, 0.7), None, (54, 186, 39), load_obj_file('ring.obj'))
 
+    # The objects that are created in the world and drawn
     object_list = [sphere, cube2]
 
     for current_object in object_list:
